@@ -21,7 +21,6 @@ class Codelist extends React.Component{
         return res.json() 
       })
       .then((arr)=>{
-        console.log(arr)
         this.setState({
           isLoading: false,
           codes: arr.codelist,
@@ -32,7 +31,6 @@ class Codelist extends React.Component{
   }
   render(){
     let i = 0
-    console.log(this.state)
     return (
       <div id='codelistContainer'>
         <div id='header'>
@@ -51,14 +49,14 @@ class Codelist extends React.Component{
                   return <li id='codes' key={i}>{codeObj.code}</li> 
                 })
             }
-            <div id='spacer'>
-              <MapComp lati={this.state.latitude} long={this.state.longitude}/>
-            </div>
             {
               this.state.codes.length === 0 && !this.state.isLoading &&
               <p id='noCodes'>No codes found.</p>
             }
           </ul>
+          <div id='spacer'>
+            <MapComp lati={this.state.latitude} long={this.state.longitude}/>
+          </div>
         </div>
       </div>
     )

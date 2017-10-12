@@ -58,8 +58,12 @@ class Home extends React.Component{
   render(){
     let codes = this.state.codes
     return (
-      <div id='mainContain'>
-        <FormComp onSubmit={this.handleSubmit} />
+      <div>
+        <div id='mainContain'>
+          <FormComp onSubmit={this.handleSubmit} />
+        </div>
+        <div id='map'>
+        </div>
       </div>
     )
   }
