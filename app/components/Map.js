@@ -6,8 +6,8 @@ GoogleMapsLoader.REGION='us'
 GoogleMapsLoader.LIBRARIES=['places']
 
 
-let MapComp = (coords)=>{
-  GoogleMapsLoader.load(function(google){
+const MapComp = (coords)=>{
+  GoogleMapsLoader.load((google)=>{
     new google.maps.Map(document.getElementById('map'), {
       zoom: 8,  
       center: {lat: coords.lati, lng: coords.long}
@@ -15,7 +15,7 @@ let MapComp = (coords)=>{
   })
   return(
     <div id='map'>
-    </div>  
+    </div>
   )
 }
 

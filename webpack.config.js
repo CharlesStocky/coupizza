@@ -14,11 +14,11 @@ module.exports = {
       {test: /\.css/, use: ['style-loader', 'css-loader']},
       {test: /\.pug$/, use: 'html-loader'}, 
       {test: /\.jpg/, use: 'url-loader'}
-    ] 
+    ]
   },
   resolve: {
     extensions: ['.js'] 
-  },  
+  },
   node:{
     fs: "empty"
   },
@@ -26,5 +26,5 @@ module.exports = {
     new webpack.optimize.OccurrenceOrderPlugin(), 
     new webpack.HotModuleReplacementPlugin(),  
     new webpack.NoEmitOnErrorsPlugin()
-  ] 
+  ]
 }

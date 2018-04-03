@@ -2,6 +2,11 @@ import React from 'react';
 import queryString from 'query-string'; 
 import 'whatwg-fetch'; 
 import MapComp from './Map'
+
+import Loading from './renderers/Loading.js'
+import Codes from './renderers/Codes.js'
+import noCodes from './renderers/noCodes.js'
+
 var GoogleMapsLoader =  require('google-maps')
 
 class Codelist extends React.Component{
@@ -38,17 +43,8 @@ class Codelist extends React.Component{
         </div>
         <div id='codelist'>
           <ul className="codesLi">
-            { 
-              this.state.isLoading === true && 
-                <p id='loading'>Loading...</p>
-            }
-            {
-              this.state.codes.length > 0 &&   
-                this.state.codes.map((codeObj)=>{
-                  i++
-                  return <li id='codes' key={i}>{codeObj.code}</li> 
-                })
-            }
+            {Loading(this.state.isLoading)} 
+            {Codes(this.state.codes)}
             {
               this.state.codes.length === 0 && !this.state.isLoading &&
               <p id='noCodes'>No codes found.</p>
