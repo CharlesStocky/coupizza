@@ -35,7 +35,6 @@ class Codelist extends React.Component{
       })
   }
   render(){
-    let i = 0
     return (
       <div id='codelistContainer'>
         <div id='header'>
