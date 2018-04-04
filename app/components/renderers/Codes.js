@@ -12,4 +12,5 @@ export default (codeObjects) =>{
       })
     )
   } 
+  return <h1>Something went wrong! Check back later. </h1>
 }

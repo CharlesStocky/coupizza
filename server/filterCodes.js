@@ -12,7 +12,6 @@ const geocoder = NodeGeocoder(options)
 let geoFunc = (queryStr) =>{
   return geocoder.geocode(queryStr)
     .then((geoCoded)=>{
-      console.log(queryStr.length)
       if(geoCoded.length === 0 || geoCoded[0].zipcode !== queryStr){ //geocoder sometimes returns a random address upon invalid zip code
         return {'code': 'Invalid zip code'}
       }
