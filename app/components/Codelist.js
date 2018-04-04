@@ -5,7 +5,7 @@ import MapComp from './Map'
 
 import Loading from './renderers/Loading.js'
 import Codes from './renderers/Codes.js'
-import noCodes from './renderers/noCodes.js'
+import NoCodes from './renderers/NoCodes.js'
 
 var GoogleMapsLoader =  require('google-maps')
 
@@ -45,10 +45,7 @@ class Codelist extends React.Component{
           <ul className="codesLi">
             {Loading(this.state.isLoading)} 
             {Codes(this.state.codes)}
-            {
-              this.state.codes.length === 0 && !this.state.isLoading &&
-              <p id='noCodes'>No codes found.</p>
-            }
+            {NoCodes(this.state.codes, this.state.isLoading)}
           </ul>
           <div id='spacer'>
             <MapComp lati={this.state.latitude} long={this.state.longitude}/>
